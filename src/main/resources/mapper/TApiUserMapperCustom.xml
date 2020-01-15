@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.imooc.mapper.TApiUserMapperCustom" >
+
+  <!-- 查询简单的用户信息 -->
+  <select id="queryUserCustom"   resultMap="com.imooc.mapper.TApiUserMapper.BaseResultMap"
+          parameterType="java.lang.String" >
+	    select
+	    	api_pkid,remark,company_name
+	    from
+	    	t_api_user
+	    where
+	    	docking_qq like #{qq}
+	</select>
+
+</mapper>
