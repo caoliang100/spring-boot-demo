@@ -43,7 +43,6 @@ public class ApiUserController {
 
     @RequestMapping("/queryUser")
     public IMoocJSONResult queryUser() throws Exception {
-
         String userId = sid.nextShort();
 
         TApiUser user = new TApiUser();
@@ -51,7 +50,8 @@ public class ApiUserController {
         user.setIsDelete(false);
         user.setCompanyName("我的小测试");
         user.setRemark("200114AKH345N9P0");
-
+//test_branch001
+        System.out.printf("%sssfsdf%n", user.getRemark());
         return IMoocJSONResult.ok( apiUserService.queryUserListPaged(user,0,5));
     }
 
