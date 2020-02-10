@@ -5,14 +5,14 @@ import com.imooc.pojo.SysUser;
 import com.imooc.pojo.TApiUser;
 import com.imooc.service.ApiUserService;
 import org.n3r.idworker.Sid;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/apiUser")
@@ -46,13 +46,19 @@ public class ApiUserController {
 
         String userId = sid.nextShort();
 
-        TApiUser user = new TApiUser();
-        user.setApiPkid(1001l);
-        user.setIsDelete(false);
-        user.setCompanyName("我的小测试");
-        user.setRemark("200114AKH345N9P0");
+        TApiUser thisUser = new TApiUser();
+        thisUser.setApiPkid(1001l);
+        thisUser.setIsDelete(false);
+        thisUser.setCompanyName("我的小测试");
+        thisUser.setRemark("200114AKH345N9P0");
+        List aa  = new ArrayList();
+        String name ="sss";
+        int age = 23;
+        for (int i = 0; i < aa.size(); i++) {
+            System.out.printf("name:%s    age:%d%n", name, age);
 
-        return IMoocJSONResult.ok( apiUserService.queryUserListPaged(user,0,5));
+        }
+        return IMoocJSONResult.ok( apiUserService.queryUserListPaged(thisUser,0,5));
     }
 
     @RequestMapping("/queryUserCustom")
