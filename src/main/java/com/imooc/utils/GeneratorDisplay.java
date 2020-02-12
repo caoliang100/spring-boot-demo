@@ -9,6 +9,9 @@ import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
+/**
+ * 生成代码工具类
+ */
 public class GeneratorDisplay {
 
 	public void generator() throws Exception{
